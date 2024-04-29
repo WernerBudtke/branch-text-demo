@@ -2,7 +2,7 @@
 
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import { Dispatch, SetStateAction, useRef } from 'react';
+import { Dispatch, SetStateAction} from 'react';
 
 type TiptapProps = {
     onBranchedParagraphClick: Dispatch<SetStateAction<any>>;
@@ -24,15 +24,13 @@ const Tiptap = (props: TiptapProps) => {
       }
     },
   })
+  
   onBranchedParagraphClick(editor?.state.tr.selection.$anchor.pos)
-  console.log(editor?.state.tr.selection.$anchor.pos) // saco lo que tengo seleccionado
-  console.log(editor?.commands)
-  // tocas boton - creas los parros, mete uno donde habias estado tocando boton
 
   return (
     <>
-        {/* <input type="button" value="Pene" onClick={() => editor?.chain().insertContent(`<p>1234567890</p>`).run()} />
-        <input type="button" value="Pija" onClick={() => editor?.chain().deleteRange({from: 0, to: 11}).insertContentAt(0,`<p>Concha</p>`).run()} /> */}
+        {/* <input type="button" value="Test1" onClick={() => editor?.chain().insertContent(`<p>1234567890</p>`).run()} />
+        <input type="button" value="Test2" onClick={() => editor?.chain().deleteRange({from: 0, to: 11}).insertContentAt(0,`<p>Test</p>`).run()} /> */}
         <EditorContent editor={editor} className='h-screen'/>
     </>
   )
